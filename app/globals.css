@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+
+  --color-dark-50: #f8fafc;
+  --color-dark-100: #f1f5f9;
+  --color-dark-200: #e2e8f0;
+  --color-dark-300: #cbd5e1;
+  --color-dark-400: #94a3b8;
+  --color-dark-500: #64748b;
+  --color-dark-600: #475569;
+  --color-dark-700: #334155;
+  --color-dark-800: #1e293b;
+  --color-dark-900: #0f172a;
+  --color-dark-950: #020617;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-dark-950);
+  color: var(--color-dark-100);
+}
+
+::selection {
+  background: var(--color-primary-500);
+  color: white;
+}
+
+a, button {
+  cursor: pointer;
+}
+
+.gradient-bg {
+  background: radial-gradient(ellipse at top, var(--color-dark-900) 0%, var(--color-dark-950) 50%);
+}
+
+.card {
+  background: var(--color-dark-900);
+  border: 1px solid var(--color-dark-800);
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--color-dark-700);
+  transform: translateY(-2px);
+}
+
+.link-hover {
+  position: relative;
+}
+
+.link-hover::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-primary-500);
+  transition: width 0.2s ease;
+}
+
+.link-hover:hover::after {
+  width: 100%;
+}
+
+input, textarea {
+  background: var(--color-dark-900);
+  border: 1px solid var(--color-dark-700);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  color: var(--color-dark-100);
+  transition: border-color 0.2s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-primary-500);
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--color-dark-500);
+}
