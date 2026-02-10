@@ -7,7 +7,7 @@ minimal single-page portfolio with multi-language support and contact form.
 - next.js 15
 - typescript
 - tailwind 4
-- web3forms
+- web3forms + hcaptcha
 
 ## run
 
