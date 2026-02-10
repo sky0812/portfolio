@@ -25,11 +25,13 @@ export default function Home() {
 
     const form = e.currentTarget
     const data = new FormData(form)
-    data.append('h-captcha-response', captchaToken)
+    data.set('access_key', process.env.NEXT_PUBLIC_WEB3FORMS_KEY || '')
+    data.set('h-captcha-response', captchaToken)
 
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
+        headers: { Accept: 'application/json' },
         body: data,
       })
 
@@ -129,7 +131,6 @@ export default function Home() {
           <p className="mt-2 text-dark-400 text-sm">{t.contactDesc}</p>
 
           <form onSubmit={handleSubmit} className="mt-6 space-y-4">
-            <input type="hidden" name="access_key" value={process.env.NEXT_PUBLIC_WEB3FORMS_KEY} />
             <div>
               <input
                 type="text"
