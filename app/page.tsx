@@ -21,15 +21,17 @@ export default function Home() {
 
     const form = e.currentTarget
     const data = new FormData(form)
+    data.append('access_key', process.env.NEXT_PUBLIC_WEB3FORMS_KEY || '')
 
     try {
-      const res = await fetch('https://formspree.io/f/' + process.env.NEXT_PUBLIC_FORMSPREE_ID, {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         body: data,
-        headers: { Accept: 'application/json' },
       })
 
-      if (res.ok) {
+      const json = await res.json()
+
+      if (json.success) {
         setFormState('sent')
         form.reset()
         setTimeout(() => setFormState('idle'), 3000)
@@ -121,6 +123,7 @@ export default function Home() {
           <p className="mt-2 text-dark-400 text-sm">{t.contactDesc}</p>
 
           <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+            <input type="checkbox" name="botcheck" className="hidden" />
             <div>
               <input
                 type="text"

@@ -7,7 +7,7 @@ minimal single-page portfolio with multi-language support and contact form.
 - next.js 15
 - typescript
 - tailwind 4
-- formspree
+- web3forms
 
 ## run
 
@@ -19,10 +19,10 @@ npm run dev
 ## env
 
 ```
-NEXT_PUBLIC_FORMSPREE_ID=your-formspree-id
+NEXT_PUBLIC_WEB3FORMS_KEY=your-web3forms-key
 ```
 
-get your formspree id at https://formspree.io (free tier: 50 submissions/month)
+get your key at https://web3forms.com (free, unlimited submissions)
 
 ## structure
 
@@ -49,7 +49,7 @@ links                  - github, linkedin, email copy
 ## features
 
 - language switcher (en, pl, uk, ru)
-- contact form with formspree
+- contact form with web3forms + spam protection
 - click to copy email with feedback
 - card hover effects
 - dark gradient theme
