@@ -25,7 +25,7 @@ export default function Home() {
 
     const form = e.currentTarget
     const formData = new FormData(form)
-    formData.append('access_key', '0a278db4-4515-42b0-8169-7ced510fe6fc')
+    formData.append('access_key', process.env.NEXT_PUBLIC_WEB3FORMS_KEY || '')
 
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
