@@ -49,7 +49,7 @@ links                  - github, linkedin, email copy
 ## features
 
 - language switcher (en, pl, uk, ru)
-- contact form with web3forms + spam protection
+- contact form with web3forms + hcaptcha
 - click to copy email with feedback
 - card hover effects
 - dark gradient theme

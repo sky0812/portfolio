@@ -1,10 +1,21 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { translations, langNames, Lang } from '@/lib/translations'
 
 export default function Home() {
   const [lang, setLang] = useState<Lang>('en')
+
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.src = 'https://web3forms.com/client/script.js'
+    script.async = true
+    script.defer = true
+    document.body.appendChild(script)
+    return () => {
+      document.body.removeChild(script)
+    }
+  }, [])
   const [copied, setCopied] = useState(false)
   const [formState, setFormState] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
   const t = translations[lang]
@@ -21,7 +32,6 @@ export default function Home() {
 
     const form = e.currentTarget
     const data = new FormData(form)
-    data.append('access_key', process.env.NEXT_PUBLIC_WEB3FORMS_KEY || '')
 
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
@@ -123,7 +133,7 @@ export default function Home() {
           <p className="mt-2 text-dark-400 text-sm">{t.contactDesc}</p>
 
           <form onSubmit={handleSubmit} className="mt-6 space-y-4">
-            <input type="checkbox" name="botcheck" className="hidden" />
+            <input type="hidden" name="access_key" value={process.env.NEXT_PUBLIC_WEB3FORMS_KEY} />
             <div>
               <input
                 type="text"
@@ -151,6 +161,7 @@ export default function Home() {
                 className="w-full resize-none"
               />
             </div>
+            <div className="h-captcha" data-captcha="true" />
             <button
               type="submit"
               disabled={formState === 'sending'}
