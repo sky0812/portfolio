@@ -1,6 +1,7 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
+import Image from 'next/image'
 import HCaptcha from '@hcaptcha/react-hcaptcha'
 import { translations, langNames, Lang } from '@/lib/translations'
 
@@ -11,7 +12,19 @@ export default function Home() {
   const [copied, setCopied] = useState(false)
   const [formState, setFormState] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
   const [showModal, setShowModal] = useState(false)
+  const [langOpen, setLangOpen] = useState(false)
+  const langRef = useRef<HTMLDivElement>(null)
   const t = translations[lang]
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setLangOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
 
   async function copyEmail() {
     await navigator.clipboard.writeText('iliagriniuk@gmail.com')
@@ -52,20 +65,45 @@ export default function Home() {
   return (
     <main className="gradient-bg min-h-screen">
       <div className="mx-auto max-w-2xl px-6 py-12">
-        <nav className="flex items-center justify-end gap-1 mb-16">
-          {(Object.keys(langNames) as Lang[]).map((l) => (
+        <nav className="flex items-center justify-end mb-16">
+          <div ref={langRef} className="relative">
             <button
-              key={l}
-              onClick={() => setLang(l)}
-              className={`px-3 py-1.5 text-xs font-medium rounded transition ${
-                lang === l
-                  ? 'bg-primary-500 text-white'
-                  : 'text-dark-400 hover:text-white'
-              }`}
+              onClick={() => setLangOpen(!langOpen)}
+              className="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-dark-900 border border-dark-700 hover:border-dark-600 transition text-sm"
             >
-              {langNames[l]}
+              <Image src={`/flags/${lang}.svg`} alt="" width={24} height={16} className="rounded-sm" />
+              <span className="text-dark-300">{langNames[lang]}</span>
+              <svg
+                className={`w-4 h-4 text-dark-500 transition-transform ${langOpen ? 'rotate-180' : ''}`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
             </button>
-          ))}
+            {langOpen && (
+              <div className="absolute right-0 mt-2 w-44 bg-dark-900 border border-dark-700 rounded-xl shadow-xl overflow-hidden z-50 animate-in">
+                {(Object.keys(langNames) as Lang[]).map((l) => (
+                  <button
+                    key={l}
+                    onClick={() => {
+                      setLang(l)
+                      setLangOpen(false)
+                    }}
+                    className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm transition ${
+                      lang === l
+                        ? 'bg-primary-500/20 text-primary-400'
+                        : 'text-dark-300 hover:bg-dark-800'
+                    }`}
+                  >
+                    <Image src={`/flags/${l}.svg`} alt="" width={24} height={16} className="rounded-sm" />
+                    {langNames[l]}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         </nav>
 
         <section>
