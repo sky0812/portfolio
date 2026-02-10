@@ -24,20 +24,19 @@ export default function Home() {
     setFormState('sending')
 
     const form = e.currentTarget
-    const data = new FormData(form)
-    data.set('access_key', process.env.NEXT_PUBLIC_WEB3FORMS_KEY || '')
-    data.set('h-captcha-response', captchaToken)
+    const formData = new FormData(form)
+    formData.append('access_key', 'cb5e3e7f-955f-4094-aca1-a484c825b227')
+    formData.append('h-captcha-response', captchaToken)
 
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: data,
+        body: formData,
       })
 
-      const json = await res.json()
+      const data = await res.json()
 
-      if (json.success) {
+      if (data.success) {
         setFormState('sent')
         form.reset()
         setCaptchaToken('')
