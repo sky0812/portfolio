@@ -1,12 +1,13 @@
 # portfolio
 
-minimal single-page portfolio with multi-language support and contact form.
+minimal single-page portfolio with multi-language support, contact form, and smooth animations.
 
 ## stack
 
-- next.js 15
+- next.js 16
 - typescript
 - tailwind 4
+- gsap + scrolltrigger
 - web3forms + hcaptcha
 
 ## run
@@ -33,7 +34,7 @@ app/
   globals.css          - tailwind theme + custom styles
 
 lib/
-  translations.ts      - all text in 4 languages
+  translations.ts      - all text in 10 languages
 ```
 
 ## sections
@@ -48,12 +49,18 @@ links                  - github, linkedin, email copy
 
 ## features
 
-- language switcher (en, pl, uk, ru)
+- language switcher (en, pl, uk, ru, fr, de, es, pt, it, nl)
 - contact form with web3forms + hcaptcha
 - click to copy email with feedback
-- card hover effects
 - dark gradient theme
 - mobile-first responsive
+
+## effects
+
+- custom cursor with glow (scales on interactive elements)
+- typewriter animation on role/title
+- 3d tilt on project cards
+- scroll-shift: elements drift right+up as they approach top edge
 
 ## customization
 

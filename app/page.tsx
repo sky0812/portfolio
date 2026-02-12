@@ -4,6 +4,10 @@ import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import HCaptcha from '@hcaptcha/react-hcaptcha'
 import { translations, langNames, Lang } from '@/lib/translations'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Home() {
   const [lang, setLang] = useState<Lang>('en')
@@ -16,6 +20,11 @@ export default function Home() {
   const langRef = useRef<HTMLDivElement>(null)
   const t = translations[lang]
 
+  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 })
+  const [cursorHovering, setCursorHovering] = useState(false)
+  const [typedRole, setTypedRole] = useState('')
+  const containerRef = useRef<HTMLDivElement>(null)
+
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (langRef.current && !langRef.current.contains(e.target as Node)) {
@@ -25,6 +34,92 @@ export default function Home() {
     document.addEventListener('mousedown', handleClickOutside)
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setCursorPos({ x: e.clientX, y: e.clientY })
+    }
+
+    const handleMouseOver = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      if (target.closest('a, button, input, textarea, .card')) {
+        setCursorHovering(true)
+      }
+    }
+
+    const handleMouseOut = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      if (target.closest('a, button, input, textarea, .card')) {
+        setCursorHovering(false)
+      }
+    }
+
+    window.addEventListener('mousemove', handleMouseMove)
+    document.addEventListener('mouseover', handleMouseOver)
+    document.addEventListener('mouseout', handleMouseOut)
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove)
+      document.removeEventListener('mouseover', handleMouseOver)
+      document.removeEventListener('mouseout', handleMouseOut)
+    }
+  }, [])
+
+  useEffect(() => {
+    setTypedRole('')
+    const role = t.role
+    let i = 0
+    const interval = setInterval(() => {
+      if (i < role.length) {
+        setTypedRole(role.slice(0, i + 1))
+        i++
+      } else {
+        clearInterval(interval)
+      }
+    }, 50)
+    return () => clearInterval(interval)
+  }, [t.role])
+
+  useEffect(() => {
+    if (!containerRef.current) return
+
+    const elements = containerRef.current.querySelectorAll('section h1, section h2, section h3, section p, section li, section article, section a, section button, footer')
+
+    elements.forEach((el) => {
+      gsap.fromTo(el,
+        { x: 0, y: 0 },
+        {
+          x: 80,
+          y: -40,
+          ease: 'power2.in',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 100px',
+            end: 'top -50px',
+            scrub: 0.3
+          }
+        }
+      )
+    })
+
+    return () => ScrollTrigger.getAll().forEach(t => t.kill())
+  }, [])
+
+  const handleCardMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const card = e.currentTarget
+    const rect = card.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+    const centerX = rect.width / 2
+    const centerY = rect.height / 2
+    const rotateX = (y - centerY) / 20
+    const rotateY = (centerX - x) / 20
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-2px)`
+  }
+
+  const handleCardLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.currentTarget.style.transform = ''
+  }
 
   async function copyEmail() {
     await navigator.clipboard.writeText('iliagriniuk@gmail.com')
@@ -64,7 +159,15 @@ export default function Home() {
 
   return (
     <main className="gradient-bg min-h-screen">
-      <div className="mx-auto max-w-2xl px-6 py-12">
+      <div
+        className={`cursor ${cursorHovering ? 'hovering' : ''}`}
+        style={{ left: cursorPos.x, top: cursorPos.y, opacity: cursorPos.x === 0 ? 0 : 1 }}
+      />
+      <div
+        className="cursor-glow"
+        style={{ left: cursorPos.x, top: cursorPos.y, opacity: cursorPos.x === 0 ? 0 : 1 }}
+      />
+      <div ref={containerRef} className="mx-auto max-w-2xl px-6 py-12">
         <nav className="flex items-center justify-end mb-16">
           <div ref={langRef} className="relative">
             <button
@@ -106,12 +209,13 @@ export default function Home() {
           </div>
         </nav>
 
-        <section>
+        <section className="scroll-shift">
           <h1 className="text-4xl font-bold tracking-tight text-white">
             {t.title}
           </h1>
           <p className="mt-2 text-xl text-primary-400">
-            {t.role}
+            {typedRole}
+            <span className="typewriter-cursor" />
           </p>
           <p className="mt-4 text-dark-300 leading-relaxed">
             {t.tagline}
@@ -142,7 +246,12 @@ export default function Home() {
 
           <div className="mt-6 space-y-4">
             {t.projects.map((project, i) => (
-              <article key={i} className="card p-5 group">
+              <article
+                key={i}
+                className="card p-5 group"
+                onMouseMove={handleCardMove}
+                onMouseLeave={handleCardLeave}
+              >
                 <h3 className="font-medium text-white group-hover:text-primary-400 transition">
                   {project.title}
                 </h3>
