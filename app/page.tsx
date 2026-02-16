@@ -4,10 +4,6 @@ import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import HCaptcha from '@hcaptcha/react-hcaptcha'
 import { translations, langNames, Lang } from '@/lib/translations'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-gsap.registerPlugin(ScrollTrigger)
 
 export default function Home() {
   const [lang, setLang] = useState<Lang>('en')
@@ -23,7 +19,6 @@ export default function Home() {
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 })
   const [cursorHovering, setCursorHovering] = useState(false)
   const [typedRole, setTypedRole] = useState('')
-  const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -79,31 +74,6 @@ export default function Home() {
     }, 50)
     return () => clearInterval(interval)
   }, [t.role])
-
-  useEffect(() => {
-    if (!containerRef.current) return
-
-    const elements = containerRef.current.querySelectorAll('section h1, section h2, section h3, section p, section li, section article, section a, section button, footer')
-
-    elements.forEach((el) => {
-      gsap.fromTo(el,
-        { x: 0, y: 0 },
-        {
-          x: 80,
-          y: -40,
-          ease: 'power2.in',
-          scrollTrigger: {
-            trigger: el,
-            start: 'top 100px',
-            end: 'top -50px',
-            scrub: 0.3
-          }
-        }
-      )
-    })
-
-    return () => ScrollTrigger.getAll().forEach(t => t.kill())
-  }, [])
 
   const handleCardMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const card = e.currentTarget
@@ -167,7 +137,7 @@ export default function Home() {
         className="cursor-glow"
         style={{ left: cursorPos.x, top: cursorPos.y, opacity: cursorPos.x === 0 ? 0 : 1 }}
       />
-      <div ref={containerRef} className="mx-auto max-w-2xl px-6 py-12">
+      <div className="mx-auto max-w-2xl px-6 py-12">
         <nav className="flex items-center justify-end mb-16">
           <div ref={langRef} className="relative">
             <button
@@ -209,7 +179,7 @@ export default function Home() {
           </div>
         </nav>
 
-        <section className="scroll-shift">
+        <section>
           <h1 className="text-4xl font-bold tracking-tight text-white">
             {t.title}
           </h1>
