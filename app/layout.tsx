@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Ilia Griniuk — Senior Frontend Engineer',
-  description: 'Building production-grade web applications. Next.js, TypeScript, React, Tailwind CSS.',
+  title: 'Ilia Griniuk - Full-Stack Developer & AI Integrations',
+  description: 'Production-ready web applications and AI integrations for US companies. Next.js, TypeScript, WordPress, LLM APIs.',
 }
 
 export default function RootLayout({

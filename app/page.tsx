@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import HCaptcha from '@hcaptcha/react-hcaptcha'
 import { translations, langNames, Lang } from '@/lib/translations'
+import ChatWidget from '@/components/ChatWidget'
 
 export default function Home() {
   const [lang, setLang] = useState<Lang>('en')
@@ -15,6 +16,14 @@ export default function Home() {
   const [langOpen, setLangOpen] = useState(false)
   const langRef = useRef<HTMLDivElement>(null)
   const t = translations[lang]
+
+  const adaMonths = (() => {
+    const start = new Date('2026-06-09')
+    const now = new Date()
+    let m = (now.getFullYear() - start.getFullYear()) * 12 + (now.getMonth() - start.getMonth())
+    if (now.getDate() < start.getDate()) m--
+    return Math.max(1, m)
+  })()
 
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 })
   const [cursorHovering, setCursorHovering] = useState(false)
@@ -226,7 +235,7 @@ export default function Home() {
                   {project.title}
                 </h3>
                 <p className="mt-2 text-sm text-dark-400">
-                  {project.description}
+                  {project.description.replace('{months}', String(adaMonths))}
                 </p>
                 <p className="mt-2 text-sm text-dark-500 leading-relaxed">
                   {project.details}
@@ -326,6 +335,8 @@ export default function Home() {
           {t.footer}
         </footer>
       </div>
+
+      <ChatWidget lang={lang} />
 
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
