@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git show:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(npm run build)"
+    ]
+  }
+}

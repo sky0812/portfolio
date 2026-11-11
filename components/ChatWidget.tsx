@@ -68,17 +68,22 @@ export default function ChatWidget({ lang }: { lang: Lang }) {
 
   return (
     <>
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
-        aria-label={t.chatOpen}
-        className="fixed bottom-6 right-6 z-40 flex items-center gap-2 bg-primary-500 text-white px-4 py-3 rounded-full shadow-xl hover:bg-primary-600 transition"
-      >
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-        </svg>
-        <span className="text-sm font-medium hidden sm:inline">{t.chatButton}</span>
-      </button>
+      <div className="chat-fab-wrap fixed bottom-6 right-6 z-40 rounded-full">
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          aria-label={t.chatOpen}
+          className="chat-fab relative z-10 flex items-center gap-2.5 bg-primary-500 text-white pl-4 pr-5 py-3.5 rounded-full shadow-2xl hover:bg-primary-600 hover:scale-105 active:scale-95 transition"
+        >
+          <span className="relative flex items-center justify-center w-6 h-6">
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+            <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-secondary-300 rounded-full ring-2 ring-primary-500" style={{ background: '#fbbf24' }} />
+          </span>
+          <span className="text-sm font-semibold">{t.chatButton}</span>
+        </button>
+      </div>
 
       {open && (
         <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4">

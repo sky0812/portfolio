@@ -58,6 +58,12 @@ export const translations: Record<Lang, {
         stack: 'Next.js · TypeScript · Neon pgvector · Gemini · Tailwind',
       },
       {
+        title: 'Liam Tracker: Private Telegram Bot',
+        description: 'Family-use Telegram bot I built end to end.',
+        details: 'Daily routine tracker for our newborn (sleep, feeding, events). LLM-powered natural-language input parsing and summaries over Telegram. Self-hosted, private.',
+        stack: 'Node.js · Telegram Bot API · LLM · Postgres',
+      },
+      {
         title: 'US Insurance Platform',
         description: 'Quote comparison system, 50k+ daily users.',
         details: 'Multi-step forms, real-time API integrations. Reduced load time by 60%. Lead frontend.',
@@ -118,6 +124,12 @@ export const translations: Record<Lang, {
         description: 'Osobisty coach oparty na RAG, {months} miesięcy codziennego użycia.',
         details: 'Next.js 16 + Neon Postgres (pgvector) + Gemini dla czatu i embeddings. LLM tool-calling dla przypomnień i checklist. Web Push, cron jobs, JWT auth. Prywatny.',
         stack: 'Next.js · TypeScript · Neon pgvector · Gemini · Tailwind',
+      },
+      {
+        title: 'Liam Tracker: Private Telegram Bot',
+        description: 'Rodzinny bot Telegramowy, zbudowany end to end.',
+        details: 'Codzienny tracker rutyny naszego noworodka (sen, karmienie, wydarzenia). Parsowanie wiadomości i podsumowania z LLM przez Telegram. Self-hosted, prywatny.',
+        stack: 'Node.js · Telegram Bot API · LLM · Postgres',
       },
       {
         title: 'Platforma ubezpieczeniowa USA',
@@ -182,6 +194,12 @@ export const translations: Record<Lang, {
         stack: 'Next.js · TypeScript · Neon pgvector · Gemini · Tailwind',
       },
       {
+        title: 'Liam Tracker: Private Telegram Bot',
+        description: 'Сімейний Telegram-бот, зроблений end to end.',
+        details: 'Трекер щоденної рутини для нашого новонародженого (сон, годування, події). Парсинг повідомлень та зведення через LLM поверх Telegram. Self-hosted, приватний.',
+        stack: 'Node.js · Telegram Bot API · LLM · Postgres',
+      },
+      {
         title: 'Insurance платформа (США)',
         description: 'Сервіс порівняння страховок, 50k+ юзерів щодня.',
         details: 'Multi-step форми, real-time API інтеграції. Зменшив load time на 60%. Lead frontend.',
@@ -242,6 +260,12 @@ export const translations: Record<Lang, {
         description: 'Персональный коуч на базе RAG, {months} месяцев ежедневного использования.',
         details: 'Next.js 16 + Neon Postgres (pgvector) + Gemini для чата и embeddings. LLM tool-calling для напоминаний и чеклистов. Web Push, cron jobs, JWT auth. Приватный.',
         stack: 'Next.js · TypeScript · Neon pgvector · Gemini · Tailwind',
+      },
+      {
+        title: 'Liam Tracker: Private Telegram Bot',
+        description: 'Семейный Telegram-бот, сделанный end to end.',
+        details: 'Трекер ежедневной рутины для нашего новорождённого (сон, кормление, события). Парсинг сообщений и сводки через LLM поверх Telegram. Self-hosted, приватный.',
+        stack: 'Node.js · Telegram Bot API · LLM · Postgres',
       },
       {
         title: 'Insurance платформа США',
@@ -306,6 +330,12 @@ export const translations: Record<Lang, {
         stack: 'Next.js · TypeScript · Neon pgvector · Gemini · Tailwind',
       },
       {
+        title: 'Liam Tracker: Private Telegram Bot',
+        description: 'Bot Telegram familial, construit end to end.',
+        details: 'Tracker de routine quotidienne pour notre nouveau-né (sommeil, nourriture, événements). Parsing des messages et résumés via LLM sur Telegram. Self-hosted, privé.',
+        stack: 'Node.js · Telegram Bot API · LLM · Postgres',
+      },
+      {
         title: 'Plateforme insurance US',
         description: 'Comparateur d\'assurances, 50k+ users par jour.',
         details: 'Multi-step forms, intégrations API real-time. Load time réduit de 60%. Lead frontend.',
@@ -366,6 +396,12 @@ export const translations: Record<Lang, {
         description: 'Persönlicher RAG-Coach, {months} Monate tägliche Nutzung.',
         details: 'Next.js 16 + Neon Postgres (pgvector) + Gemini für Chat und Embeddings. LLM Tool-Calling für Erinnerungen und Checklisten. Web Push, Cron Jobs, JWT Auth. Privat.',
         stack: 'Next.js · TypeScript · Neon pgvector · Gemini · Tailwind',
+      },
+      {
+        title: 'Liam Tracker: Private Telegram Bot',
+        description: 'Familiärer Telegram-Bot, end to end gebaut.',
+        details: 'Alltags-Tracker für unser Neugeborenes (Schlaf, Fütterung, Events). LLM-gestützte Nachrichtenauswertung und Zusammenfassungen über Telegram. Self-hosted, privat.',
+        stack: 'Node.js · Telegram Bot API · LLM · Postgres',
       },
       {
         title: 'US Insurance-Plattform',
@@ -430,6 +466,12 @@ export const translations: Record<Lang, {
         stack: 'Next.js · TypeScript · Neon pgvector · Gemini · Tailwind',
       },
       {
+        title: 'Liam Tracker: Private Telegram Bot',
+        description: 'Bot familiar de Telegram, construido end to end.',
+        details: 'Tracker diario para la rutina de nuestro recién nacido (sueño, alimentación, eventos). Parsing de mensajes y resúmenes via LLM sobre Telegram. Self-hosted, privado.',
+        stack: 'Node.js · Telegram Bot API · LLM · Postgres',
+      },
+      {
         title: 'Plataforma insurance US',
         description: 'Comparador de seguros, 50k+ users diarios.',
         details: 'Multi-step forms, integraciones API real-time. Load time reducido 60%. Lead frontend.',
@@ -490,6 +532,12 @@ export const translations: Record<Lang, {
         description: 'Coach pessoal baseado em RAG, {months} meses de uso diário.',
         details: 'Next.js 16 + Neon Postgres (pgvector) + Gemini para chat e embeddings. LLM tool-calling para lembretes e checklists. Web Push, cron jobs, JWT auth. Privado.',
         stack: 'Next.js · TypeScript · Neon pgvector · Gemini · Tailwind',
+      },
+      {
+        title: 'Liam Tracker: Private Telegram Bot',
+        description: 'Bot familiar de Telegram, feito end to end.',
+        details: 'Tracker diário da rotina do nosso recém-nascido (sono, alimentação, eventos). Parsing de mensagens e resumos via LLM sobre Telegram. Self-hosted, privado.',
+        stack: 'Node.js · Telegram Bot API · LLM · Postgres',
       },
       {
         title: 'Plataforma insurance US',
@@ -554,6 +602,12 @@ export const translations: Record<Lang, {
         stack: 'Next.js · TypeScript · Neon pgvector · Gemini · Tailwind',
       },
       {
+        title: 'Liam Tracker: Private Telegram Bot',
+        description: 'Bot Telegram familiare, costruito end to end.',
+        details: 'Tracker quotidiano della routine del nostro neonato (sonno, pasti, eventi). Parsing dei messaggi e riassunti via LLM su Telegram. Self-hosted, privato.',
+        stack: 'Node.js · Telegram Bot API · LLM · Postgres',
+      },
+      {
         title: 'Piattaforma insurance US',
         description: 'Comparatore assicurazioni, 50k+ user giornalieri.',
         details: 'Multi-step forms, integrazioni API real-time. Load time ridotto del 60%. Lead frontend.',
@@ -614,6 +668,12 @@ export const translations: Record<Lang, {
         description: 'Persoonlijke RAG-coach, {months} maanden dagelijks gebruik.',
         details: 'Next.js 16 + Neon Postgres (pgvector) + Gemini voor chat en embeddings. LLM tool-calling voor herinneringen en checklists. Web Push, cron jobs, JWT auth. Privé.',
         stack: 'Next.js · TypeScript · Neon pgvector · Gemini · Tailwind',
+      },
+      {
+        title: 'Liam Tracker: Private Telegram Bot',
+        description: 'Familie Telegram-bot, end to end gebouwd.',
+        details: 'Dagelijkse routinetracker voor onze pasgeborene (slaap, voeding, events). LLM-aangedreven berichtverwerking en samenvattingen via Telegram. Self-hosted, privé.',
+        stack: 'Node.js · Telegram Bot API · LLM · Postgres',
       },
       {
         title: 'US Insurance Platform',
