@@ -35,6 +35,7 @@ export const translations: Record<Lang, {
   chatSend: string
   chatClose: string
   chatError: string
+  chatSuggestions: string[]
 }> = {
   en: {
     title: 'Ilia Griniuk',
@@ -103,6 +104,12 @@ export const translations: Record<Lang, {
     chatSend: 'Send',
     chatClose: 'Close',
     chatError: 'Something went wrong. Try again.',
+    chatSuggestions: [
+      'What\'s his stack?',
+      'Tell me about Ada AI',
+      'Is he available for a project?',
+      'How to reach him?',
+    ],
   },
   pl: {
     title: 'Ilia Griniuk',
@@ -171,6 +178,12 @@ export const translations: Record<Lang, {
     chatSend: 'Wyślij',
     chatClose: 'Zamknij',
     chatError: 'Coś poszło nie tak. Spróbuj ponownie.',
+    chatSuggestions: [
+      'Jaki ma stack?',
+      'Opowiedz o Ada AI',
+      'Jest dostępny do projektu?',
+      'Jak się z nim skontaktować?',
+    ],
   },
   uk: {
     title: 'Ілля Гринюк',
@@ -239,6 +252,12 @@ export const translations: Record<Lang, {
     chatSend: 'Надіслати',
     chatClose: 'Закрити',
     chatError: 'Щось пішло не так. Спробуйте ще раз.',
+    chatSuggestions: [
+      'Який у нього стек?',
+      'Розкажи про Ada AI',
+      'Він доступний для проєкту?',
+      'Як з ним зв\'язатись?',
+    ],
   },
   ru: {
     title: 'Илья Гринюк',
@@ -307,6 +326,12 @@ export const translations: Record<Lang, {
     chatSend: 'Отправить',
     chatClose: 'Закрыть',
     chatError: 'Что-то пошло не так. Попробуйте ещё.',
+    chatSuggestions: [
+      'Какой у него стек?',
+      'Расскажи про Ada AI',
+      'Он доступен для проекта?',
+      'Как с ним связаться?',
+    ],
   },
   fr: {
     title: 'Ilia Griniuk',
@@ -375,6 +400,12 @@ export const translations: Record<Lang, {
     chatSend: 'Envoyer',
     chatClose: 'Fermer',
     chatError: 'Une erreur est survenue. Réessayez.',
+    chatSuggestions: [
+      'Quel est son stack ?',
+      'Parle-moi d\'Ada AI',
+      'Est-il disponible pour un projet ?',
+      'Comment le contacter ?',
+    ],
   },
   de: {
     title: 'Ilia Griniuk',
@@ -443,6 +474,12 @@ export const translations: Record<Lang, {
     chatSend: 'Senden',
     chatClose: 'Schließen',
     chatError: 'Es ist ein Fehler aufgetreten. Nochmal versuchen.',
+    chatSuggestions: [
+      'Was ist sein Stack?',
+      'Erzähl mir von Ada AI',
+      'Ist er für ein Projekt verfügbar?',
+      'Wie erreiche ich ihn?',
+    ],
   },
   es: {
     title: 'Ilia Griniuk',
@@ -511,6 +548,12 @@ export const translations: Record<Lang, {
     chatSend: 'Enviar',
     chatClose: 'Cerrar',
     chatError: 'Algo salió mal. Inténtalo de nuevo.',
+    chatSuggestions: [
+      '¿Cuál es su stack?',
+      'Háblame de Ada AI',
+      '¿Está disponible para un proyecto?',
+      '¿Cómo contactarlo?',
+    ],
   },
   pt: {
     title: 'Ilia Griniuk',
@@ -579,6 +622,12 @@ export const translations: Record<Lang, {
     chatSend: 'Enviar',
     chatClose: 'Fechar',
     chatError: 'Algo correu mal. Tenta novamente.',
+    chatSuggestions: [
+      'Qual é o seu stack?',
+      'Fala-me sobre o Ada AI',
+      'Está disponível para um projeto?',
+      'Como contactá-lo?',
+    ],
   },
   it: {
     title: 'Ilia Griniuk',
@@ -647,6 +696,12 @@ export const translations: Record<Lang, {
     chatSend: 'Invia',
     chatClose: 'Chiudi',
     chatError: 'Qualcosa è andato storto. Riprova.',
+    chatSuggestions: [
+      'Qual è il suo stack?',
+      'Parlami di Ada AI',
+      'È disponibile per un progetto?',
+      'Come contattarlo?',
+    ],
   },
   nl: {
     title: 'Ilia Griniuk',
@@ -715,6 +770,12 @@ export const translations: Record<Lang, {
     chatSend: 'Versturen',
     chatClose: 'Sluiten',
     chatError: 'Er ging iets mis. Probeer opnieuw.',
+    chatSuggestions: [
+      'Wat is zijn stack?',
+      'Vertel over Ada AI',
+      'Is hij beschikbaar voor een project?',
+      'Hoe contact opnemen?',
+    ],
   },
 }
 
