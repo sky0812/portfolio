@@ -43,7 +43,7 @@ export const translations: Record<Lang, {
     stack: 'Next.js · TypeScript · WordPress · LLM APIs',
     whatIBuild: 'Specialization',
     skills: [
-      'Production LLM integrations (OpenAI, Gemini, Claude APIs)',
+      'Production LLM integrations (OpenAI, Gemini, Claude, Groq APIs)',
       'RAG pipelines with pgvector and embedding-based search',
       'Next.js + TypeScript applications (Lighthouse 90-100)',
       'Headless CMS integrations (WordPress, Strapi)',
@@ -111,7 +111,7 @@ export const translations: Record<Lang, {
     stack: 'Next.js · TypeScript · WordPress · LLM APIs',
     whatIBuild: 'Specjalizacja',
     skills: [
-      'Produkcyjne integracje LLM (OpenAI, Gemini, Claude API)',
+      'Produkcyjne integracje LLM (OpenAI, Gemini, Claude, Groq API)',
       'RAG pipelines z pgvector i embedding search',
       'Aplikacje Next.js + TypeScript (Lighthouse 90-100)',
       'Integracje headless CMS (WordPress, Strapi)',
@@ -179,7 +179,7 @@ export const translations: Record<Lang, {
     stack: 'Next.js · TypeScript · WordPress · LLM APIs',
     whatIBuild: 'Спеціалізація',
     skills: [
-      'Продакшн-інтеграції LLM (OpenAI, Gemini, Claude API)',
+      'Продакшн-інтеграції LLM (OpenAI, Gemini, Claude, Groq API)',
       'RAG-пайплайни з pgvector та embedding-пошуком',
       'Next.js + TypeScript додатки (Lighthouse 90-100)',
       'Headless CMS інтеграції (WordPress, Strapi)',
@@ -247,7 +247,7 @@ export const translations: Record<Lang, {
     stack: 'Next.js · TypeScript · WordPress · LLM APIs',
     whatIBuild: 'Специализация',
     skills: [
-      'Продакшн-интеграции LLM (OpenAI, Gemini, Claude API)',
+      'Продакшн-интеграции LLM (OpenAI, Gemini, Claude, Groq API)',
       'RAG-пайплайны с pgvector и embedding-поиском',
       'Next.js + TypeScript приложения (Lighthouse 90-100)',
       'Headless CMS интеграции (WordPress, Strapi)',
@@ -315,7 +315,7 @@ export const translations: Record<Lang, {
     stack: 'Next.js · TypeScript · WordPress · LLM APIs',
     whatIBuild: 'Spécialisation',
     skills: [
-      'Intégrations LLM en production (OpenAI, Gemini, Claude API)',
+      'Intégrations LLM en production (OpenAI, Gemini, Claude, Groq API)',
       'Pipelines RAG avec pgvector et recherche par embeddings',
       'Applications Next.js + TypeScript (Lighthouse 90-100)',
       'Intégrations headless CMS (WordPress, Strapi)',
@@ -383,7 +383,7 @@ export const translations: Record<Lang, {
     stack: 'Next.js · TypeScript · WordPress · LLM APIs',
     whatIBuild: 'Spezialisierung',
     skills: [
-      'Produktive LLM-Integrationen (OpenAI, Gemini, Claude API)',
+      'Produktive LLM-Integrationen (OpenAI, Gemini, Claude, Groq API)',
       'RAG-Pipelines mit pgvector und Embedding-Suche',
       'Next.js + TypeScript Anwendungen (Lighthouse 90-100)',
       'Headless CMS Integrationen (WordPress, Strapi)',
@@ -451,7 +451,7 @@ export const translations: Record<Lang, {
     stack: 'Next.js · TypeScript · WordPress · LLM APIs',
     whatIBuild: 'Especialización',
     skills: [
-      'Integraciones LLM en producción (OpenAI, Gemini, Claude API)',
+      'Integraciones LLM en producción (OpenAI, Gemini, Claude, Groq API)',
       'Pipelines RAG con pgvector y búsqueda por embeddings',
       'Aplicaciones Next.js + TypeScript (Lighthouse 90-100)',
       'Integraciones headless CMS (WordPress, Strapi)',
@@ -519,7 +519,7 @@ export const translations: Record<Lang, {
     stack: 'Next.js · TypeScript · WordPress · LLM APIs',
     whatIBuild: 'Especialização',
     skills: [
-      'Integrações LLM em produção (OpenAI, Gemini, Claude API)',
+      'Integrações LLM em produção (OpenAI, Gemini, Claude, Groq API)',
       'Pipelines RAG com pgvector e pesquisa por embeddings',
       'Aplicações Next.js + TypeScript (Lighthouse 90-100)',
       'Integrações headless CMS (WordPress, Strapi)',
@@ -587,7 +587,7 @@ export const translations: Record<Lang, {
     stack: 'Next.js · TypeScript · WordPress · LLM APIs',
     whatIBuild: 'Specializzazione',
     skills: [
-      'Integrazioni LLM in produzione (OpenAI, Gemini, Claude API)',
+      'Integrazioni LLM in produzione (OpenAI, Gemini, Claude, Groq API)',
       'Pipeline RAG con pgvector e ricerca basata su embeddings',
       'Applicazioni Next.js + TypeScript (Lighthouse 90-100)',
       'Integrazioni headless CMS (WordPress, Strapi)',
@@ -655,7 +655,7 @@ export const translations: Record<Lang, {
     stack: 'Next.js · TypeScript · WordPress · LLM APIs',
     whatIBuild: 'Specialisatie',
     skills: [
-      'Productie LLM-integraties (OpenAI, Gemini, Claude API)',
+      'Productie LLM-integraties (OpenAI, Gemini, Claude, Groq API)',
       'RAG pipelines met pgvector en embedding-based search',
       'Next.js + TypeScript applicaties (Lighthouse 90-100)',
       'Headless CMS integraties (WordPress, Strapi)',

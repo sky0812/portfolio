@@ -14,7 +14,7 @@ function context() {
     `- The last 5+ years embedded full-time in a US agency (GoldenComm, via Webactly), shipping enterprise apps in Next.js, TypeScript, Tailwind, Strapi, and WordPress.`,
     `- Current positioning: ${en.role}. ${en.tagline}`,
     `- Core stack: ${en.stack}.`,
-    `- Over the past year focused on AI integrations: OpenAI, Google Gemini, Anthropic Claude APIs. Comfortable with RAG pipelines, pgvector, function calling, and prompt engineering.`,
+    `- Over the past year focused on AI integrations: OpenAI, Google Gemini, Anthropic Claude, and Groq (Llama/Mixtral) APIs. Comfortable with RAG pipelines, pgvector, function calling, and prompt engineering.`,
     `- Main AI side project: Ada AI, a RAG-based personal coach built on Next.js 16 + Neon Postgres (pgvector) + Gemini. In daily personal use for 5 months. Private, not publicly distributed.`,
     `- Second AI side project: Liam Tracker, a private Telegram bot built end-to-end for the family, helping manage daily routines, with LLM-powered input parsing and summaries. Private.`,
     `- Day-to-day uses Cursor and Claude Code as productivity multipliers, with the judgment to catch AI mistakes before they ship.`,
